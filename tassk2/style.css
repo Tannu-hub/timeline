@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #f5f5f5; */
+  min-height: 100vh;
+}
+
+/* Timeline container */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  padding: 40px 20px 20px 20px;
+  border-radius: 10px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  max-width: 1000px;
+  width: 90%;
+  position: relative;
+}
+
+/* The connecting line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 55px;  /* align with circles */
+  left: 50px;
+  right: 50px;
+  height: 3px;
+  background: #00bcd4;
+  z-index: 0;
+}
+
+/* Each timeline item */
+.timeline-item {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+/* The circle points */
+.circle {
+  width: 20px;
+  height: 20px;
+  background: #00bcd4;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* Year styling */
+.year {
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 5px;
+}
+
+/* Description styling */
+.desc {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive (stacked) */
+@media(max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline::before {
+    display: none; /* hide line on mobile */
+  }
+
+  .timeline-item {
+    margin-bottom: 30px;
+  }
+}
